@@ -34,6 +34,13 @@
   margin-bottom: 0;
   color: var(--very-light-pink);
 }
+
+.product-info figure img {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
 @media (max-width: 640px) {
   .ProductItem {
     width: 140px;
