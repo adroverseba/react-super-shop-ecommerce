@@ -64,6 +64,6 @@ module.exports = {
     allowedHosts: path.join(__dirname, "dist"),
     historyApiFallback: true,
     compress: true,
-    port: 3000,
+    port: 8080,
   },
 };

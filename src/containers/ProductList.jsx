@@ -3,7 +3,7 @@ import { useGetProducts } from "../hooks/useGetProducts";
 
 import "../styles/ProductList.scss";
 
-const API = "https://api.escuelajs.co/api/v1/products?limit=10&offset=0";
+const API = "https://enigmatic-journey-93971.herokuapp.com/api/v1/products";
 
 export const ProductList = () => {
   const products = useGetProducts(API);

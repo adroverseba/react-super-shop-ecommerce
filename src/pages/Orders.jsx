@@ -1,5 +1,5 @@
 import React from "react";
-import {OrderItem} from "../components/OrderItem";
+import { OrderItem } from "../components/OrderItem";
 import "../styles/Orders.scss";
 
 export const Orders = () => {
@@ -14,4 +14,3 @@ export const Orders = () => {
     </div>
   );
 };
-

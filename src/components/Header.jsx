@@ -3,7 +3,7 @@ import "../styles/Header.scss";
 
 import { Menu } from "@components/Menu";
 import menu from "@icons/icon_menu.svg";
-import logo from "@logos/logo_yard_sale.svg";
+import logo from "@logos/logo_frogshop.svg";
 import ShoppingCart from "@icons/icon_shopping_cart.svg";
 import { AppContext } from "../context/AppContext";
 import { MyOrder } from "../containers/MyOrder";
@@ -48,7 +48,7 @@ export const Header = () => {
       <div className="navbar-right">
         <ul>
           <li className="navbar-email" onClick={handleToggle}>
-            platzi@example.com
+            user@example.com
           </li>
           <li
             className="navbar-shopping-cart"

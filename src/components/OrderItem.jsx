@@ -3,18 +3,19 @@ import "../styles/OrderItem.scss";
 
 import closeIcon from "@icons/icon_close.png";
 
-export const OrderItem = () => {
+export const OrderItem = ({
+  product: { image, name, price },
+  remove,
+  indexValue,
+}) => {
   return (
     <div className="OrderItem">
       <figure>
-        <img
-          src="https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-          alt="bike"
-        />
+        <img src={image} alt={name} />
       </figure>
-      <p>Bike</p>
-      <p>$30,00</p>
-      <img src={closeIcon} alt="close" />
+      <p>{name}</p>
+      <p>${price}</p>
+      <img src={closeIcon} alt="close" onClick={() => remove(indexValue)} />
     </div>
   );
 };

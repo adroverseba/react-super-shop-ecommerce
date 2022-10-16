@@ -4,7 +4,7 @@ import "../styles/ProductItem.scss";
 
 import addToCartImage from "@icons/bt_add_to_cart.svg";
 
-export const ProductItem = ({ product: { price, images, title } }) => {
+export const ProductItem = ({ product }) => {
   const { addToCart, state } = useContext(AppContext);
 
   const handleClick = (product) => {
@@ -14,13 +14,13 @@ export const ProductItem = ({ product: { price, images, title } }) => {
 
   return (
     <div className="ProductItem">
-      <img src={images[0]} />
+      <img src={product.image} />
       <div className="product-info">
         <div>
-          <p>${price}</p>
-          <p>{title}</p>
+          <p>${product.price}</p>
+          <p>{product.name}</p>
         </div>
-        <figure onClick={() => handleClick({ price, images, title })}>
+        <figure onClick={() => handleClick(product)}>
           <img src={addToCartImage} alt="" />
         </figure>
       </div>
