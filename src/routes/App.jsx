@@ -20,7 +20,7 @@ export const App = () => {
   const initialState = useInitialState();
   return (
     <AppContext.Provider value={initialState}>
-      <BrowserRouter>
+      <BrowserRouter basename="/react-super-shop-ecommerce">
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />

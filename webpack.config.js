@@ -61,6 +61,9 @@ module.exports = {
     new MiniCssExtractPlugin({ filename: "[name].css" }),
   ],
   devServer: {
+    static: {
+      directory: path.join(__dirname, "public"),
+    },
     allowedHosts: path.join(__dirname, "dist"),
     historyApiFallback: true,
     compress: true,
