@@ -4,6 +4,7 @@ import logo from "@logos/logo_frogshop.svg";
 
 export const Login = () => {
   const form = useRef(null);
+  const letraRoja = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ export const Login = () => {
       <div className="Login-container">
         <img src={logo} alt="logo" className="logo-log" />
         <form action="/" className="form" ref={form}>
-          <label htmlFor="email" className="label">
+          <label htmlFor="email" className="label" ref={letraRoja}>
             Email address
           </label>
           <input

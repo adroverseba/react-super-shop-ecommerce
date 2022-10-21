@@ -7,21 +7,44 @@ import logo from "@logos/logo_frogshop.svg";
 import ShoppingCart from "@icons/icon_shopping_cart.svg";
 import { AppContext } from "../context/AppContext";
 import { MyOrder } from "../containers/MyOrder";
+import { MobileMenu } from "./MobileMenu";
 
 export const Header = () => {
-  const [Toggle, setToggle] = useState(false);
-  const [ToggleOrders, setToggleOrders] = useState(false);
+  const [toggle, setToggle] = useState(false);
+  const [toggleOrders, setToggleOrders] = useState(false);
+  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
 
   const {
     state: { cart },
   } = useContext(AppContext);
 
-  const handleToggle = () => {
-    setToggle(!Toggle);
+  const handleToggleMenues = (toggleOption) => {
+    switch (toggleOption) {
+      case "menu":
+        setToggle(!toggle);
+        setToggleOrders(false);
+        setToggleMobileMenu(false);
+        break;
+      case "cart":
+        setToggleOrders(!toggleOrders);
+        setToggle(false);
+        setToggleMobileMenu(false);
+        break;
+      case "mobileMenu":
+        setToggleMobileMenu(!toggleMobileMenu);
+        setToggle(false);
+        setToggleOrders(false);
+        break;
+    }
   };
   return (
     <nav>
-      <img src={menu} alt="menu" className="menu" />
+      <img
+        src={menu}
+        alt="menu"
+        className="menu"
+        onClick={() => handleToggleMenues("mobileMenu")}
+      />
       <div className="navbar-left">
         <img src={logo} alt="logo" className="nav-logo" />
         <ul>
@@ -47,20 +70,26 @@ export const Header = () => {
       </div>
       <div className="navbar-right">
         <ul>
-          <li className="navbar-email" onClick={handleToggle}>
+          <li
+            className="navbar-email"
+            onClick={() => handleToggleMenues("menu")}
+          >
             user@example.com
           </li>
           <li
             className="navbar-shopping-cart"
-            onClick={() => setToggleOrders(!ToggleOrders)}
+            onClick={() => handleToggleMenues("cart")}
           >
             <img src={ShoppingCart} alt="shopping cart" />
             {cart.length > 0 && <div>{cart.length}</div>}
           </li>
         </ul>
       </div>
-      {Toggle && <Menu />}
-      {ToggleOrders && <MyOrder />}
+      {toggle && <Menu />}
+      {toggleOrders && <MyOrder />}
+      {toggleMobileMenu && (
+        <MobileMenu setToggleMobileMenu={setToggleMobileMenu} />
+      )}
     </nav>
   );
 };
