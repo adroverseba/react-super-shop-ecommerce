@@ -86,7 +86,7 @@ export const Header = () => {
         </ul>
       </div>
       {toggle && <Menu />}
-      {toggleOrders && <MyOrder />}
+      {toggleOrders && <MyOrder setToggleOrders={setToggleOrders} />}
       {toggleMobileMenu && (
         <MobileMenu setToggleMobileMenu={setToggleMobileMenu} />
       )}

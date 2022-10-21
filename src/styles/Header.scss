@@ -57,9 +57,13 @@ nav {
 .navbar-shopping-cart {
   position: relative;
 }
+
+.navbar-shopping-cart img {
+  width: 25px;
+}
 .navbar-shopping-cart div {
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
   background-color: var(--hospital-green);
   color: aliceblue;
   border-radius: 50%;

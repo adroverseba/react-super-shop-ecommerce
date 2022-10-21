@@ -5,7 +5,7 @@ import { AppContext } from "../context/AppContext";
 
 import arrowIcon from "@icons/flechita.svg";
 
-export const MyOrder = () => {
+export const MyOrder = ({ setToggleOrders }) => {
   const {
     state: { cart },
     removeFromCart,
@@ -18,7 +18,11 @@ export const MyOrder = () => {
   return (
     <aside className="MyOrder">
       <div className="title-container">
-        <img src={arrowIcon} alt="arrow" />
+        <img
+          src={arrowIcon}
+          alt="arrow"
+          onClick={() => setToggleOrders(false)}
+        />
         <p className="title">My order</p>
       </div>
       <div className="my-order-content">
